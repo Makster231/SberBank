@@ -1,0 +1,2328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="">
+    <!-- Title-->
+    <title>Home Page</title>
+    <!-- Reset & Grid-->
+    <script>
+        !function () {
+            function e(e, t, n) {
+                e.addEventListener ? e.addEventListener(t, n, !1) : e.attachEvent && e.attachEvent("on" + t, n)
+            }
+
+            function t() {
+                if (window.localStorage && window.XMLHttpRequest) if (function (e) {
+                    return window.localStorage && localStorage.font_css_cache && localStorage.font_css_cache_file === e
+                }(o)) n(localStorage.font_css_cache); else {
+                    var t = new XMLHttpRequest;
+                    t.open("GET", o, !0), e(t, "load", function () {
+                        4 === t.readyState && (n(t.responseText), localStorage.font_css_cache = t.responseText, localStorage.font_css_cache_file = o)
+                    }), t.send()
+                } else {
+                    var c = document.createElement("link");
+                    c.href = o, c.rel = "stylesheet", c.type = "text/css", document.getElementsByTagName("head")[0].appendChild(c), document.cookie = "font_css_cache"
+                }
+            }
+
+            function n(e) {
+                var t = document.createElement("style");
+                t.innerHTML = e, document.getElementsByTagName("head")[0].appendChild(t)
+            }
+
+            var o = "_fonts.css";
+            window.localStorage && localStorage.font_css_cache || document.cookie.indexOf("font_css_cache") > -1 ? t() : e(window, "load", t)
+        }();
+    </script>
+
+
+    <style>
+        abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            display: block
+        }
+
+        body {
+            line-height: 1
+        }
+
+        ul {
+            list-style: none
+        }
+
+        blockquote, q {
+            quotes: none
+        }
+
+        blockquote:after, blockquote:before, q:after, q:before {
+            content: ''
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        .no-gap {
+            padding: 0 !important
+        }
+
+        .gap-s {
+            margin-top: 2.5rem
+        }
+
+        .gap-m {
+            margin-top: 5rem
+        }
+
+        .gap-b {
+            margin-top: 7.5rem
+        }
+
+        .fixed {
+            position: fixed !important;
+            width: 100%
+        }
+
+        .container-fluid {
+            position: relative
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            position: relative
+        }
+
+        .text-center {
+            text-align: center
+        }
+
+        .text-left {
+            text-align: left
+        }
+
+        .text-right {
+            text-align: right
+        }
+
+        .row {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap
+        }
+
+        .column {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column
+        }
+
+        .flex {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex
+        }
+
+        [class*=col-] {
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-box-flex: 0;
+            -webkit-flex-grow: 0;
+            -moz-box-flex: 0;
+            -ms-flex-positive: 0;
+            flex-grow: 0;
+            -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+            position: relative
+        }
+
+        .col {
+            -webkit-box-flex: 0;
+            -webkit-flex-grow: 0;
+            -moz-box-flex: 0;
+            -ms-flex-positive: 0;
+            flex-grow: 0;
+            -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+            flex-shrink: 0
+        }
+
+        .col-auto {
+            -webkit-box-flex: 1;
+            -webkit-flex-grow: 1;
+            -moz-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            -webkit-flex-shrink: 1;
+            -ms-flex-negative: 1;
+            flex-shrink: 1
+        }
+
+        .col-1 {
+            -webkit-flex-basis: 8.3333%;
+            -ms-flex-preferred-size: 8.3333%;
+            flex-basis: 8.3333%
+        }
+
+        .col-2 {
+            -webkit-flex-basis: 16.6667%;
+            -ms-flex-preferred-size: 16.6667%;
+            flex-basis: 16.6667%
+        }
+
+        .col-3 {
+            -webkit-flex-basis: 25%;
+            -ms-flex-preferred-size: 25%;
+            flex-basis: 25%
+        }
+
+        .col-4 {
+            -webkit-flex-basis: 33.3333%;
+            -ms-flex-preferred-size: 33.3333%;
+            flex-basis: 33.3333%
+        }
+
+        .col-5 {
+            -webkit-flex-basis: 41.6667%;
+            -ms-flex-preferred-size: 41.6667%;
+            flex-basis: 41.6667%
+        }
+
+        .col-6 {
+            -webkit-flex-basis: 50%;
+            -ms-flex-preferred-size: 50%;
+            flex-basis: 50%
+        }
+
+        .col-7 {
+            -webkit-flex-basis: 58.3333%;
+            -ms-flex-preferred-size: 58.3333%;
+            flex-basis: 58.3333%
+        }
+
+        .col-8 {
+            -webkit-flex-basis: 66.6667%;
+            -ms-flex-preferred-size: 66.6667%;
+            flex-basis: 66.6667%
+        }
+
+        .col-9 {
+            -webkit-flex-basis: 75%;
+            -ms-flex-preferred-size: 75%;
+            flex-basis: 75%
+        }
+
+        .col-10 {
+            -webkit-flex-basis: 83.3333%;
+            -ms-flex-preferred-size: 83.3333%;
+            flex-basis: 83.3333%
+        }
+
+        .col-11 {
+            -webkit-flex-basis: 91.3333%;
+            -ms-flex-preferred-size: 91.3333%;
+            flex-basis: 91.3333%
+        }
+
+        .col-12 {
+            -webkit-flex-basis: 100%;
+            -ms-flex-preferred-size: 100%;
+            flex-basis: 100%
+        }
+
+        .justify-start {
+            -webkit-box-pack: start;
+            -webkit-justify-content: flex-start;
+            -moz-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start
+        }
+
+        .justify-end {
+            -webkit-box-pack: end;
+            -webkit-justify-content: flex-end;
+            -moz-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end
+        }
+
+        .justify-center {
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center
+        }
+
+        .justify-around {
+            -webkit-justify-content: space-around;
+            -ms-flex-pack: distribute;
+            justify-content: space-around
+        }
+
+        .justify-between {
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -moz-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between
+        }
+
+        .justify-evenly {
+            -webkit-box-pack: space-evenly;
+            -webkit-justify-content: space-evenly;
+            -moz-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+            justify-content: space-evenly
+        }
+
+        .align-start {
+            -webkit-box-align: start;
+            -webkit-align-items: flex-start;
+            -moz-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start
+        }
+
+        .align-end {
+            -webkit-box-align: end;
+            -webkit-align-items: flex-end;
+            -moz-box-align: end;
+            -ms-flex-align: end;
+            align-items: flex-end
+        }
+
+        .align-center {
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
+            align-items: center
+        }
+
+        .align-self-start {
+            -webkit-align-self: flex-start;
+            -ms-flex-item-align: start;
+            align-self: flex-start
+        }
+
+        .align-self-end {
+            -webkit-align-self: flex-end;
+            -ms-flex-item-align: end;
+            align-self: flex-end
+        }
+
+        .align-self-center {
+            -webkit-align-self: center;
+            -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center
+        }
+
+        .order-1 {
+            -webkit-box-ordinal-group: 2;
+            -webkit-order: 1;
+            -moz-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+            order: 1
+        }
+
+        .order-2 {
+            -webkit-box-ordinal-group: 3;
+            -webkit-order: 2;
+            -moz-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+            order: 2
+        }
+
+        .order-3 {
+            -webkit-box-ordinal-group: 4;
+            -webkit-order: 3;
+            -moz-box-ordinal-group: 4;
+            -ms-flex-order: 3;
+            order: 3
+        }
+
+        .offset-0 {
+            margin-left: 0
+        }
+
+        .offset-1 {
+            margin-left: 8.3333%
+        }
+
+        .offset-2 {
+            margin-left: 16.6667%
+        }
+
+        .offset-3 {
+            margin-left: 25%
+        }
+
+        .offset-4 {
+            margin-left: 33.3333%
+        }
+
+        .offset-5 {
+            margin-left: 41.6667%
+        }
+
+        .offset-6 {
+            margin-left: 50%
+        }
+
+        .offset-7 {
+            margin-left: 58.3333%
+        }
+
+        .offset-8 {
+            margin-left: 66.6667%
+        }
+
+        .offset-9 {
+            margin-left: 75%
+        }
+
+        .offset-10 {
+            margin-left: 83.3333%
+        }
+
+        .offset-11 {
+            margin-left: 91.3333%
+        }
+
+        .visible {
+            display: block
+        }
+
+        .visible-flex {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex
+        }
+
+        .hidden {
+            display: none
+        }
+
+        @media screen and (max-width: 1024px) {
+            .col-m-auto {
+                -webkit-box-flex: 1;
+                -webkit-flex-grow: 1;
+                -moz-box-flex: 1;
+                -ms-flex-positive: 1;
+                flex-grow: 1;
+                -webkit-flex-shrink: 1;
+                -ms-flex-negative: 1;
+                flex-shrink: 1
+            }
+
+            .row-m {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap
+            }
+
+            .order-m-1 {
+                -webkit-box-ordinal-group: 2;
+                -webkit-order: 1;
+                -moz-box-ordinal-group: 2;
+                -ms-flex-order: 1;
+                order: 1
+            }
+
+            .order-m-2 {
+                -webkit-box-ordinal-group: 3;
+                -webkit-order: 2;
+                -moz-box-ordinal-group: 3;
+                -ms-flex-order: 2;
+                order: 2
+            }
+
+            .order-m-3 {
+                -webkit-box-ordinal-group: 4;
+                -webkit-order: 3;
+                -moz-box-ordinal-group: 4;
+                -ms-flex-order: 3;
+                order: 3
+            }
+
+            .column-m {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -moz-box-orient: vertical;
+                -moz-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column
+            }
+
+            .flex-m {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex
+            }
+
+            .fixed-m {
+                position: fixed;
+                width: 100%
+            }
+
+            .col-m-1 {
+                -webkit-flex-basis: 8.3333%;
+                -ms-flex-preferred-size: 8.3333%;
+                flex-basis: 8.3333%
+            }
+
+            .col-m-2 {
+                -webkit-flex-basis: 16.6667%;
+                -ms-flex-preferred-size: 16.6667%;
+                flex-basis: 16.6667%
+            }
+
+            .col-m-3 {
+                -webkit-flex-basis: 25%;
+                -ms-flex-preferred-size: 25%;
+                flex-basis: 25%
+            }
+
+            .col-m-4 {
+                -webkit-flex-basis: 33.3333%;
+                -ms-flex-preferred-size: 33.3333%;
+                flex-basis: 33.3333%
+            }
+
+            .col-m-5 {
+                -webkit-flex-basis: 41.6667%;
+                -ms-flex-preferred-size: 41.6667%;
+                flex-basis: 41.6667%
+            }
+
+            .col-m-6 {
+                -webkit-flex-basis: 50%;
+                -ms-flex-preferred-size: 50%;
+                flex-basis: 50%
+            }
+
+            .col-m-7 {
+                -webkit-flex-basis: 58.3333%;
+                -ms-flex-preferred-size: 58.3333%;
+                flex-basis: 58.3333%
+            }
+
+            .col-m-8 {
+                -webkit-flex-basis: 66.6667%;
+                -ms-flex-preferred-size: 66.6667%;
+                flex-basis: 66.6667%
+            }
+
+            .col-m-9 {
+                -webkit-flex-basis: 75%;
+                -ms-flex-preferred-size: 75%;
+                flex-basis: 75%
+            }
+
+            .col-m-10 {
+                -webkit-flex-basis: 83.3333%;
+                -ms-flex-preferred-size: 83.3333%;
+                flex-basis: 83.3333%
+            }
+
+            .col-m-11 {
+                -webkit-flex-basis: 91.3333%;
+                -ms-flex-preferred-size: 91.3333%;
+                flex-basis: 91.3333%
+            }
+
+            .col-m-12 {
+                -webkit-flex-basis: 100%;
+                -ms-flex-preferred-size: 100%;
+                flex-basis: 100%
+            }
+
+            .offset-m-0 {
+                margin-left: 0
+            }
+
+            .offset-m-1 {
+                margin-left: 8.3333%
+            }
+
+            .offset-m-2 {
+                margin-left: 16.6667%
+            }
+
+            .offset-m-3 {
+                margin-left: 25%
+            }
+
+            .offset-m-4 {
+                margin-left: 33.3333%
+            }
+
+            .offset-m-5 {
+                margin-left: 41.6667%
+            }
+
+            .offset-m-6 {
+                margin-left: 50%
+            }
+
+            .offset-m-7 {
+                margin-left: 58.3333%
+            }
+
+            .offset-m-8 {
+                margin-left: 66.6667%
+            }
+
+            .offset-m-9 {
+                margin-left: 75%
+            }
+
+            .offset-m-10 {
+                margin-left: 83.3333%
+            }
+
+            .offset-m-11 {
+                margin-left: 91.3333%
+            }
+
+            .visible-m {
+                display: block
+            }
+
+            .visible-flex-m {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex
+            }
+
+            .hidden-m {
+                display: none
+            }
+
+            .text-m-center {
+                text-align: center
+            }
+
+            .text-m-left {
+                text-align: left
+            }
+
+            .text-m-right {
+                text-align: right
+            }
+
+            .m-justify-start {
+                -webkit-box-pack: start;
+                -webkit-justify-content: flex-start;
+                -moz-box-pack: start;
+                -ms-flex-pack: start;
+                justify-content: flex-start
+            }
+
+            .m-justify-end {
+                -webkit-box-pack: end;
+                -webkit-justify-content: flex-end;
+                -moz-box-pack: end;
+                -ms-flex-pack: end;
+                justify-content: flex-end
+            }
+
+            .m-justify-center {
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                -moz-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center
+            }
+
+            .m-justify-around {
+                -webkit-justify-content: space-around;
+                -ms-flex-pack: distribute;
+                justify-content: space-around
+            }
+
+            .m-justify-between {
+                -webkit-box-pack: justify;
+                -webkit-justify-content: space-between;
+                -moz-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between
+            }
+
+            .m-justify-evenly {
+                -webkit-box-pack: space-evenly;
+                -webkit-justify-content: space-evenly;
+                -moz-box-pack: space-evenly;
+                -ms-flex-pack: space-evenly;
+                justify-content: space-evenly
+            }
+
+            .m-align-start {
+                -webkit-box-align: start;
+                -webkit-align-items: flex-start;
+                -moz-box-align: start;
+                -ms-flex-align: start;
+                align-items: flex-start
+            }
+
+            .m-align-end {
+                -webkit-box-align: end;
+                -webkit-align-items: flex-end;
+                -moz-box-align: end;
+                -ms-flex-align: end;
+                align-items: flex-end
+            }
+
+            .m-align-center {
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                -moz-box-align: center;
+                -ms-flex-align: center;
+                align-items: center
+            }
+
+            .m-align-self-start {
+                -webkit-align-self: flex-start;
+                -ms-flex-item-align: start;
+                align-self: flex-start
+            }
+
+            .m-align-self-end {
+                -webkit-align-self: flex-end;
+                -ms-flex-item-align: end;
+                align-self: flex-end
+            }
+
+            .m-align-self-center {
+                -webkit-align-self: center;
+                -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+                align-self: center
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .flex-s {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap
+            }
+
+            .col-s-auto {
+                -webkit-box-flex: 1;
+                -webkit-flex-grow: 1;
+                -moz-box-flex: 1;
+                -ms-flex-positive: 1;
+                flex-grow: 1;
+                -webkit-flex-shrink: 1;
+                -ms-flex-negative: 1;
+                flex-shrink: 1
+            }
+
+            .order-s-1 {
+                -webkit-box-ordinal-group: 2;
+                -webkit-order: 1;
+                -moz-box-ordinal-group: 2;
+                -ms-flex-order: 1;
+                order: 1
+            }
+
+            .order-s-2 {
+                -webkit-box-ordinal-group: 3;
+                -webkit-order: 2;
+                -moz-box-ordinal-group: 3;
+                -ms-flex-order: 2;
+                order: 2
+            }
+
+            .order-s-3 {
+                -webkit-box-ordinal-group: 4;
+                -webkit-order: 3;
+                -moz-box-ordinal-group: 4;
+                -ms-flex-order: 3;
+                order: 3
+            }
+
+            .column-s {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -moz-box-orient: vertical;
+                -moz-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column
+            }
+
+            .row-s {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap
+            }
+
+            .fixed-s {
+                position: fixed;
+                width: 100%
+            }
+
+            .col-s-1 {
+                -webkit-flex-basis: 8.3333%;
+                -ms-flex-preferred-size: 8.3333%;
+                flex-basis: 8.3333%
+            }
+
+            .col-s-2 {
+                -webkit-flex-basis: 16.6667%;
+                -ms-flex-preferred-size: 16.6667%;
+                flex-basis: 16.6667%
+            }
+
+            .col-s-3 {
+                -webkit-flex-basis: 25%;
+                -ms-flex-preferred-size: 25%;
+                flex-basis: 25%
+            }
+
+            .col-s-4 {
+                -webkit-flex-basis: 33.3333%;
+                -ms-flex-preferred-size: 33.3333%;
+                flex-basis: 33.3333%
+            }
+
+            .col-s-5 {
+                -webkit-flex-basis: 41.6667%;
+                -ms-flex-preferred-size: 41.6667%;
+                flex-basis: 41.6667%
+            }
+
+            .col-s-6 {
+                -webkit-flex-basis: 50%;
+                -ms-flex-preferred-size: 50%;
+                flex-basis: 50%
+            }
+
+            .col-s-7 {
+                -webkit-flex-basis: 58.3333%;
+                -ms-flex-preferred-size: 58.3333%;
+                flex-basis: 58.3333%
+            }
+
+            .col-s-8 {
+                -webkit-flex-basis: 66.6667%;
+                -ms-flex-preferred-size: 66.6667%;
+                flex-basis: 66.6667%
+            }
+
+            .col-s-9 {
+                -webkit-flex-basis: 75%;
+                -ms-flex-preferred-size: 75%;
+                flex-basis: 75%
+            }
+
+            .col-s-10 {
+                -webkit-flex-basis: 83.3333%;
+                -ms-flex-preferred-size: 83.3333%;
+                flex-basis: 83.3333%
+            }
+
+            .col-s-11 {
+                -webkit-flex-basis: 91.3333%;
+                -ms-flex-preferred-size: 91.3333%;
+                flex-basis: 91.3333%
+            }
+
+            .col-s-12 {
+                -webkit-flex-basis: 100%;
+                -ms-flex-preferred-size: 100%;
+                flex-basis: 100%
+            }
+
+            .offset-s-0 {
+                margin-left: 0
+            }
+
+            .offset-s-1 {
+                margin-left: 8.3333%
+            }
+
+            .offset-s-2 {
+                margin-left: 16.6667%
+            }
+
+            .offset-s-3 {
+                margin-left: 25%
+            }
+
+            .offset-s-4 {
+                margin-left: 33.3333%
+            }
+
+            .offset-s-5 {
+                margin-left: 41.6667%
+            }
+
+            .offset-s-6 {
+                margin-left: 50%
+            }
+
+            .offset-s-7 {
+                margin-left: 58.3333%
+            }
+
+            .offset-s-8 {
+                margin-left: 66.6667%
+            }
+
+            .offset-s-9 {
+                margin-left: 75%
+            }
+
+            .offset-s-10 {
+                margin-left: 83.3333%
+            }
+
+            .offset-s-11 {
+                margin-left: 91.3333%
+            }
+
+            .visible-s {
+                display: block
+            }
+
+            .visible-flex-s {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex
+            }
+
+            .hidden-s {
+                display: none
+            }
+
+            .text-s-center {
+                text-align: center
+            }
+
+            .text-s-left {
+                text-align: left
+            }
+
+            .text-s-right {
+                text-align: right
+            }
+
+            .s-justify-start {
+                -webkit-box-pack: start;
+                -webkit-justify-content: flex-start;
+                -moz-box-pack: start;
+                -ms-flex-pack: start;
+                justify-content: flex-start
+            }
+
+            .s-justify-end {
+                -webkit-box-pack: end;
+                -webkit-justify-content: flex-end;
+                -moz-box-pack: end;
+                -ms-flex-pack: end;
+                justify-content: flex-end
+            }
+
+            .s-justify-center {
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                -moz-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center
+            }
+
+            .s-justify-around {
+                -webkit-justify-content: space-around;
+                -ms-flex-pack: distribute;
+                justify-content: space-around
+            }
+
+            .s-justify-between {
+                -webkit-box-pack: justify;
+                -webkit-justify-content: space-between;
+                -moz-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between
+            }
+
+            .s-justify-evenly {
+                -webkit-box-pack: space-evenly;
+                -webkit-justify-content: space-evenly;
+                -moz-box-pack: space-evenly;
+                -ms-flex-pack: space-evenly;
+                justify-content: space-evenly
+            }
+
+            .s-align-start {
+                -webkit-box-align: start;
+                -webkit-align-items: flex-start;
+                -moz-box-align: start;
+                -ms-flex-align: start;
+                align-items: flex-start
+            }
+
+            .s-align-end {
+                -webkit-box-align: end;
+                -webkit-align-items: flex-end;
+                -moz-box-align: end;
+                -ms-flex-align: end;
+                align-items: flex-end
+            }
+
+            .s-align-center {
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                -moz-box-align: center;
+                -ms-flex-align: center;
+                align-items: center
+            }
+
+            .s-align-self-start {
+                -webkit-align-self: flex-start;
+                -ms-flex-item-align: start;
+                align-self: flex-start
+            }
+
+            .s-align-self-end {
+                -webkit-align-self: flex-end;
+                -ms-flex-item-align: end;
+                align-self: flex-end
+            }
+
+            .s-align-self-center {
+                -webkit-align-self: center;
+                -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+                align-self: center
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .col-xs-auto {
+                -webkit-box-flex: 1;
+                -webkit-flex-grow: 1;
+                -moz-box-flex: 1;
+                -ms-flex-positive: 1;
+                flex-grow: 1;
+                -webkit-flex-shrink: 1;
+                -ms-flex-negative: 1;
+                flex-shrink: 1
+            }
+
+            .order-xs-1 {
+                -webkit-box-ordinal-group: 2;
+                -webkit-order: 1;
+                -moz-box-ordinal-group: 2;
+                -ms-flex-order: 1;
+                order: 1
+            }
+
+            .order-xs-2 {
+                -webkit-box-ordinal-group: 3;
+                -webkit-order: 2;
+                -moz-box-ordinal-group: 3;
+                -ms-flex-order: 2;
+                order: 2
+            }
+
+            .order-xs-3 {
+                -webkit-box-ordinal-group: 4;
+                -webkit-order: 3;
+                -moz-box-ordinal-group: 4;
+                -ms-flex-order: 3;
+                order: 3
+            }
+
+            .column-xs {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -moz-box-orient: vertical;
+                -moz-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column
+            }
+
+            .row-xs {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap
+            }
+
+            .fixed-xs {
+                position: fixed;
+                width: 100%
+            }
+
+            .col-xs-1 {
+                -webkit-flex-basis: 8.3333%;
+                -ms-flex-preferred-size: 8.3333%;
+                flex-basis: 8.3333%
+            }
+
+            .col-xs-2 {
+                -webkit-flex-basis: 16.6667%;
+                -ms-flex-preferred-size: 16.6667%;
+                flex-basis: 16.6667%
+            }
+
+            .col-xs-3 {
+                -webkit-flex-basis: 25%;
+                -ms-flex-preferred-size: 25%;
+                flex-basis: 25%
+            }
+
+            .col-xs-4 {
+                -webkit-flex-basis: 33.3333%;
+                -ms-flex-preferred-size: 33.3333%;
+                flex-basis: 33.3333%
+            }
+
+            .col-xs-5 {
+                -webkit-flex-basis: 41.6667%;
+                -ms-flex-preferred-size: 41.6667%;
+                flex-basis: 41.6667%
+            }
+
+            .col-xs-6 {
+                -webkit-flex-basis: 50%;
+                -ms-flex-preferred-size: 50%;
+                flex-basis: 50%
+            }
+
+            .col-xs-7 {
+                -webkit-flex-basis: 58.3333%;
+                -ms-flex-preferred-size: 58.3333%;
+                flex-basis: 58.3333%
+            }
+
+            .col-xs-8 {
+                -webkit-flex-basis: 66.6667%;
+                -ms-flex-preferred-size: 66.6667%;
+                flex-basis: 66.6667%
+            }
+
+            .col-xs-9 {
+                -webkit-flex-basis: 75%;
+                -ms-flex-preferred-size: 75%;
+                flex-basis: 75%
+            }
+
+            .col-xs-10 {
+                -webkit-flex-basis: 83.3333%;
+                -ms-flex-preferred-size: 83.3333%;
+                flex-basis: 83.3333%
+            }
+
+            .col-xs-11 {
+                -webkit-flex-basis: 91.3333%;
+                -ms-flex-preferred-size: 91.3333%;
+                flex-basis: 91.3333%
+            }
+
+            .col-xs-12 {
+                -webkit-flex-basis: 100%;
+                -ms-flex-preferred-size: 100%;
+                flex-basis: 100%
+            }
+
+            .offset-xs-0 {
+                margin-left: 0
+            }
+
+            .offset-xs-1 {
+                margin-left: 8.3333%
+            }
+
+            .offset-xs-2 {
+                margin-left: 16.6667%
+            }
+
+            .offset-xs-3 {
+                margin-left: 25%
+            }
+
+            .offset-xs-4 {
+                margin-left: 33.3333%
+            }
+
+            .offset-xs-5 {
+                margin-left: 41.6667%
+            }
+
+            .offset-xs-6 {
+                margin-left: 50%
+            }
+
+            .offset-xs-7 {
+                margin-left: 58.3333%
+            }
+
+            .offset-xs-8 {
+                margin-left: 66.6667%
+            }
+
+            .offset-xs-9 {
+                margin-left: 75%
+            }
+
+            .offset-xs-10 {
+                margin-left: 83.3333%
+            }
+
+            .offset-xs-11 {
+                margin-left: 91.3333%
+            }
+
+            .visible-xs {
+                display: block
+            }
+
+            .visible-flex-xs {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex
+            }
+
+            .hidden-xs {
+                display: none
+            }
+
+            .text-xs-center {
+                text-align: center
+            }
+
+            .text-xs-left {
+                text-align: left
+            }
+
+            .text-xs-right {
+                text-align: right
+            }
+
+            .xs-justify-start {
+                -webkit-box-pack: start;
+                -webkit-justify-content: flex-start;
+                -moz-box-pack: start;
+                -ms-flex-pack: start;
+                justify-content: flex-start
+            }
+
+            .xs-justify-end {
+                -webkit-box-pack: end;
+                -webkit-justify-content: flex-end;
+                -moz-box-pack: end;
+                -ms-flex-pack: end;
+                justify-content: flex-end
+            }
+
+            .xs-justify-center {
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                -moz-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center
+            }
+
+            .xs-justify-around {
+                -webkit-justify-content: space-around;
+                -ms-flex-pack: distribute;
+                justify-content: space-around
+            }
+
+            .xs-justify-between {
+                -webkit-box-pack: justify;
+                -webkit-justify-content: space-between;
+                -moz-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between
+            }
+
+            .xs-justify-evenly {
+                -webkit-box-pack: space-evenly;
+                -webkit-justify-content: space-evenly;
+                -moz-box-pack: space-evenly;
+                -ms-flex-pack: space-evenly;
+                justify-content: space-evenly
+            }
+
+            .xs-align-start {
+                -webkit-box-align: start;
+                -webkit-align-items: flex-start;
+                -moz-box-align: start;
+                -ms-flex-align: start;
+                align-items: flex-start
+            }
+
+            .xs-align-end {
+                -webkit-box-align: end;
+                -webkit-align-items: flex-end;
+                -moz-box-align: end;
+                -ms-flex-align: end;
+                align-items: flex-end
+            }
+
+            .xs-align-center {
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                -moz-box-align: center;
+                -ms-flex-align: center;
+                align-items: center
+            }
+
+            .xs-align-self-start {
+                -webkit-align-self: flex-start;
+                -ms-flex-item-align: start;
+                align-self: flex-start
+            }
+
+            .xs-align-self-end {
+                -webkit-align-self: flex-end;
+                -ms-flex-item-align: end;
+                align-self: flex-end
+            }
+
+            .xs-align-self-center {
+                -webkit-align-self: center;
+                -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+                align-self: center
+            }
+        }
+
+        p {
+            color: #fff
+        }
+
+        input::-webkit-input-placeholder {
+            overflow: visible
+        }
+
+        input::-moz-placeholder {
+            overflow: visible
+        }
+
+        input:-ms-input-placeholder {
+            overflow: visible
+        }
+
+        input::-ms-input-placeholder {
+            overflow: visible
+        }
+
+        input:-moz-placeholder {
+            overflow: visible
+        }
+
+        input::placeholder {
+            overflow: visible
+        }
+
+        input[type=submit], input[type=text], textarea {
+            -webkit-appearance: none
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield
+        }
+
+        input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+            -webkit-appearance: none
+        }
+
+        a, label {
+            -webkit-tap-highlight-color: transparent
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        body, html {
+            font-size: 16px
+        }
+
+        ::-webkit-scrollbar {
+            width: 16px
+        }
+
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3)
+        }
+
+        ::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: rgba(0, 0, 0, .042)
+        }
+    </style>
+
+    <!--    <link rel="stylesheet" href="css/style.css">-->
+    <!--    <link rel="stylesheet" href="css/media.css">-->
+    <link rel="stylesheet" href="css/main_min.css">
+    <!-- Meta tags-->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Favicon-->
+    <!--    <link rel="shortcut icon" href="img/favicon.png" type="image/png">-->
+
+</head>
+<body>
+<div class="wrapper">
+    <img src="img/bg-main.jpg" alt="city" class="body_backGround">
+    <div class="container form">
+        <div class="row form_top justify-between align-center">
+            <div class="row col-xs-8 col-7 justify-around align-center">
+                <div class="col-5 logo_link">
+                    <a href="https://www.sberbank.ru" target="_blank"><img src="img/SberBank.png" alt="Pictue" class=""></a>
+                </div>
+
+                <div class="col-1 justify-around logo_link">
+                    <img src="img/vr.png" alt="Pictue" class="">
+                </div>
+
+                <div class="col-5 logo_link">
+                    <a href="https://bilshe.mastercard.ua/" target="_blank"><img src="img/SberCard.png" alt="Pictue"
+                                                                                 class=""></a>
+                </div>
+            </div>
+            <div class="form_top_stage">1 / 9</div>
+        </div>
+        <div class="form_main_first_step   justify-center">
+            <div class="row ">
+                <h1 class="form_main_first_step_h1 ">Ваше отношение к жизни</h1>
+            </div>
+            <div class="row  form_main_first_step_body body_bg first_step_bg">
+                <div class="row">
+                    <p class="form_main_first_step_p">Взрослая жизнь куда интересней, чем казалась в юности. C
+                        возрастом приходит понимание, а вместе с ним истинное наслаждение каждым моментом. Готовы ли
+                        вы оценить степень своей «зрелости»? Ответьте на несколько простых вопросов. Только
+                        честно!</p>
+                </div>
+                <div class="row xs-justify-around fit_contain">
+                    <div class="offset-xs-0 col-xs-5 col-3 offset-2">
+                        <img class="form_main_first_step_img" src="img/first_step_boy.png" alt="Pictue">
+                        <button class="form_main_first_step_btn men firstButton">Для мужчин</button>
+                    </div>
+                    <div class="offset-xs-0 col-xs-5 col-3 offset-2">
+                        <img class="form_main_first_step_img" src="img/first_step_girl.png" alt="Pictue">
+                        <button class="form_main_first_step_btn women firstButton">Для девушек</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul class="form_main">
+
+            <li class="form_main_girl_question  girl_first hidden step">
+                <div class="row justify-center align-center">
+                    <h1 class="form_main_girl_question_h1">На ваш взгляд, тайное оружие женщины:</h1>
+                </div>
+                <div class="row form_main_girl_question_body body_bg first_bg_girl">
+                    <div class="row justify-center align-center fit_contain">
+                        <div class="column justify-around align-center col-4">
+                            <img src="img/girl1.png" alt="girls">
+                            <img src="img/floor.png" alt="floor">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="form_main_girl_question_questions row  ">
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="first_girls_question" type="radio" id="girl1">
+                        <label for="girl1">которкое платье и улыбка</label>
+                    </li>
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="first_girls_question" type="radio" id="girl2">
+                        <label for="girl2">Скалка и сковородка</label>
+                    </li>
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="first_girls_question" type="radio" id="girl3">
+                        <label for="girl3">Французский поцелуй</label>
+                    </li>
+                </ul>
+                <div class="row justify-center align-center">
+                    <button type="button" class="button">
+                        Далее
+                    </button>
+                </div>
+
+            </li>
+            <li class="form_main_girl_question  girl_second hidden step">
+                <div class="row justify-center align-center">
+                    <h1 class="form_main_girl_question_h1">Зачем женщинам высокие каблуки?</h1>
+                </div>
+                <div class="row form_main_girl_question_body body_bg second_bg_girl">
+                    <div class="row justify-center align-center fit_contain">
+                        <div class="column justify-around align-center col-4">
+                            <img src="img/girl2.png" alt="girls">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="form_main_girl_question_questions row  ">
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="second_girls_question" type="radio" id="girl4">
+                        <label for="girl4">А что, разве есть другая обувь?</label>
+                    </li>
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="second_girls_question" type="radio" id="girl5">
+                        <label for="girl5">Надо смотреть на мужчин свысока</label>
+                    </li>
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="second_girls_question" type="radio" id="girl6">
+                        <label for="girl6">Чтобы парить над землей</label>
+                    </li>
+
+                </ul>
+                <div class="row justify-center align-center">
+                    <button type="button" class="button">
+                        Далее
+                    </button>
+                </div>
+            </li>
+            <li class="form_main_girl_question  girl_third hidden step">
+                <div class="row justify-center align-center">
+                    <h1 class="form_main_girl_question_h1">Лучшие друзья девушек – </h1>
+                </div>
+                <div class="row form_main_girl_question_body body_bg third_bg_girl">
+                    <div class="row justify-center align-center fit_contain">
+                        <div class="column justify-around align-center col-4">
+                            <img src="img/girl3.png" alt="girls">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="form_main_girl_question_questions row  ">
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="third_girls_question" type="radio" id="girl7">
+                        <label for="girl7">Разумеется, бриллианты</label>
+                    </li>
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="third_girls_question" type="radio" id="girl8">
+                        <label for="girl8">Милые маленькие собачки</label>
+                    </li>
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="third_girls_question" type="radio" id="girl9">
+                        <label for="girl9">Его кредитки</label>
+                    </li>
+
+                </ul>
+                <div class="row justify-center align-center">
+                    <button type="button" class="button">
+                        Далее
+                    </button>
+                </div>
+            </li>
+            <li class="form_main_girl_question  girl_fourth hidden step">
+                <div class="row justify-center align-center">
+                    <h1 class="form_main_girl_question_h1">Правильное питание – это</h1>
+                </div>
+                <div class="row form_main_girl_question_body body_bg fourth_bg_girl">
+                    <div class="row justify-center align-center fit_contain">
+                        <div class="column justify-around align-center col-4">
+                            <img src="img/girl4.png" alt="girls">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="form_main_girl_question_questions row  ">
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="fourth_girls_question" type="radio" id="girl10">
+                        <label for="girl10">Не есть после 18:00</label>
+                    </li>
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="fourth_girls_question" type="radio" id="girl11">
+                        <label for="girl11">Съесть то, что выбирает спутник – <br> нужно во всем разделять его
+                            взгляды</label>
+                    </li>
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="fourth_girls_question" type="radio" id="girl12">
+                        <label for="girl12">Есть друг друга глазами</label>
+                    </li>
+                </ul>
+                <div class="row justify-center align-center">
+                    <button type="button" class="button">
+                        Далее
+                    </button>
+                </div>
+            </li>
+            <li class="form_main_girl_question  girl_fifth hidden  step">
+                <div class="row justify-center align-center">
+                    <h1 class="form_main_girl_question_h1">Как бы вы охарактеризовали отношения между мужчиной и
+                        женщиной?</h1>
+                </div>
+                <div class="row form_main_girl_question_body body_bg fifth_bg_girl">
+                    <div class="row justify-center align-center fit_contain">
+                        <div class="column justify-around align-center col-4">
+                            <img src="img/girl5.png" alt="girls">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="form_main_girl_question_questions row  ">
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="fifth_girls_question" type="radio" id="girl13">
+                        <label for="girl13">Математика – нужно все грамотно просчитать</label>
+                    </li>
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="fifth_girls_question" type="radio" id="girl14">
+                        <label for="girl14">Химия – гормоны не обманешь</label>
+                    </li>
+                    <li class="form_main_girl_question_questions_item">
+                        <input name="fifth_girls_question" type="radio" id="girl15">
+                        <label for="girl15">Физика – сплошное электричество</label>
+                    </li>
+                </ul>
+                <div class="row justify-center align-center">
+                    <button type="button" class="button">
+                        Далее
+                    </button>
+                </div>
+            </li>
+
+            <li class="form_main_boy_question  boy_first  hidden step">
+                <div class="row justify-center align-center">
+                    <h1 class="form_main_boy_question_h1">Самые лучшие часы — </h1>
+                </div>
+                <div class="row form_main_boy_question_body body_bg  first_bg_boy">
+                    <div class="row justify-center align-center fit_contain">
+                        <div class="column justify-around align-center col-4">
+                            <img src="img/boy1.png" alt="boys">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="form_main_boy_question_questions row  ">
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="first_boys_question" type="radio" id="boy1">
+                        <label for="boy1">Те, что подарил дедушка</label>
+                    </li>
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="first_boys_question" type="radio" id="boy2">
+                        <label for="boy2">Новые!</label>
+                    </li>
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="first_boys_question" type="radio" id="boy3">
+                        <label for="boy3">Которые вы провели наедине с собой</label>
+                    </li>
+                </ul>
+                <div class="row justify-center align-center">
+                    <button type="button" class="button">
+                        Далее
+                    </button>
+                </div>
+            </li>
+            <li class="form_main_boy_question  boy_second  hidden step">
+                <div class="row justify-center align-center">
+                    <h1 class="form_main_boy_question_h1">Ваша первая мысль с утра:</h1>
+                </div>
+                <div class="row form_main_boy_question_body body_bg second_bg_boy">
+                    <div class="row justify-center align-center fit_contain">
+                        <div class="column justify-around align-center col-4">
+                            <img src="img/boy2.png" alt="boys">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="form_main_boy_question_questions row  ">
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="second_boys_question" type="radio" id="boy4">
+                        <label for="boy4">Какой сегодня день?</label>
+                    </li>
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="second_boys_question" type="radio" id="boy5">
+                        <label for="boy5">Где я?</label>
+                    </li>
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="second_boys_question" type="radio" id="boy6">
+                        <label for="boy6">Наконец я выспался!</label>
+                    </li>
+                </ul>
+                <div class="row justify-center align-center">
+                    <button type="button" class="button">
+                        Далее
+                    </button>
+                </div>
+            </li>
+            <li class="form_main_boy_question  boy_third hidden step">
+                <div class="row justify-center align-center">
+                    <h1 class="form_main_boy_question_h1">Мужчина больше всего нуждается в:</h1>
+                </div>
+                <div class="row form_main_boy_question_body body_bg third_bg_boy">
+                    <div class="row justify-center align-center fit_contain">
+                        <div class="column justify-around align-center col-4">
+                            <img src="img/boy3.png" alt="boys">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="form_main_boy_question_questions row  ">
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="third_boys_question" type="radio" id="boy7">
+                        <label for="boy7">Интересном хобби</label>
+                    </li>
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="third_boys_question" type="radio" id="boy8">
+                        <label for="boy8">Настоящем друге</label>
+                    </li>
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="third_boys_question" type="radio" id="boy9">
+                        <label for="boy9">Успешной карьере</label>
+                    </li>
+                </ul>
+                <div class="row justify-center align-center">
+                    <button type="button" class="button">
+                        Далее
+                    </button>
+                </div>
+            </li>
+            <li class="form_main_boy_question  boy_fourth hidden step">
+                <div class="row justify-center align-center">
+                    <h1 class="form_main_boy_question_h1">Твой идеальный образ:</h1>
+                </div>
+                <div class="row form_main_boy_question_body body_bg fourth_bg_boy">
+                    <div class="row justify-center align-center fit_contain">
+                        <div class="column justify-around align-center col-4">
+                            <img src="img/boy4.png" alt="boys">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="form_main_boy_question_questions row  ">
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="fourth_boys_question" type="radio" id="boy10">
+                        <label for="boy10">Футболка, джинсы и трехдневная щетина</label>
+                    </li>
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="fourth_boys_question" type="radio" id="boy11">
+                        <label for="boy11">Классический костюм и белая рубашка</label>
+                    </li>
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="fourth_boys_question" type="radio" id="boy12">
+                        <label for="boy12">Модные кроссовки и солнечные очки </label>
+                    </li>
+                </ul>
+                <div class="row justify-center align-center">
+                    <button type="button" class="button">
+                        Далее
+                    </button>
+                </div>
+            </li>
+            <li class="form_main_boy_question  boy_fifth hidden step">
+                <div class="row justify-center align-center">
+                    <h1 class="form_main_boy_question_h1">Чем должен пахнуть настоящий мужчина?</h1>
+                </div>
+                <div class="row form_main_boy_question_body body_bg  fifth_bg_boy">
+                    <div class="row justify-center align-center fit_contain">
+                        <div class="column justify-around align-center col-4">
+                            <img src="img/boy5.png" alt="boys">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="form_main_boy_question_questions row  ">
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="fifth_boys_question" type="radio" id="boy13">
+                        <label for="boy13">Чистотой и свежестью</label>
+                    </li>
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="fifth_boys_question" type="radio" id="boy14">
+                        <label for="boy14">Дорогим парфюмом</label>
+                    </li>
+                    <li class="form_main_boy_question_questions_item">
+                        <input name="fifth_boys_question" type="radio" id="boy15">
+                        <label for="boy15">Свободой и независимостью</label>
+                    </li>
+                </ul>
+                <div class="row justify-center align-center">
+                    <button type="button" class="button">
+                        Далее
+                    </button>
+                </div>
+            </li>
+
+            <li class="form_main_all_question  all_first hidden step">
+                <div class="row justify-center align-center">
+                    <h1 class="form_main_all_question_h1">Что такое счастье?</h1>
+                </div>
+                <div class="row form_main_all_question_body body_bg  first_bg_all">
+                    <div class="row justify-center align-center fit_contain">
+                        <div class="column justify-around align-center col-4">
+                            <img src="img/all1.png" alt="Pictue">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="form_main_all_question_questions row  ">
+                    <li class="form_main_all_question_questions_item">
+                        <input name="first_all_question" type="radio" id="all1">
+                        <label for="all1">Маленький домик на берегу моря</label>
+                    </li>
+                    <li class="form_main_all_question_questions_item">
+                        <input name="first_all_question" type="radio" id="all2">
+                        <label for="all2">Карьера и успешный бизнес</label>
+                    </li>
+                    <li class="form_main_all_question_questions_item">
+                        <input name="first_all_question" type="radio" id="all3">
+                        <label for="all3">Дети, кот или собака. И лучше все вместе</label>
+                    </li>
+                </ul>
+                <div class="row justify-center align-center">
+                    <button type="button" class="button">
+                        Далее
+                    </button>
+                </div>
+            </li>
+            <li class="form_main_all_question  all_second hidden step">
+                <div class="row justify-center align-center">
+                    <h1 class="form_main_all_question_h1">Через 10 лет вы видите себя...</h1>
+                </div>
+                <div class="row form_main_all_question_body body_bg second_bg_all">
+                    <div class="row justify-center align-center fit_contain">
+                        <div class="column justify-around align-center col-4">
+                            <img src="img/all2.png" alt="Pictue">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="form_main_all_question_questions row  ">
+                    <li class="form_main_all_question_questions_item">
+                        <input name="second_all_question" type="radio" id="all4">
+                        <label for="all4">В кресле у камина</label>
+                    </li>
+                    <li class="form_main_all_question_questions_item">
+                        <input name="second_all_question" type="radio" id="all5">
+                        <label for="all5">На пике горной вершины</label>
+                    </li>
+                    <li class="form_main_all_question_questions_item">
+                        <input name="second_all_question" type="radio" id="all6">
+                        <label for="all6">За рулем шикарного авто</label>
+                    </li>
+                </ul>
+                <div class="row justify-center align-center">
+                    <button type="button" class="button">
+                        Далее
+                    </button>
+                </div>
+            </li>
+            <li class="form_main_all_question  all_third hidden step">
+                <div class="row justify-center align-center">
+                    <h1 class="form_main_all_question_h1">Сколько пунктов в ваших «Правилах жизни»</h1>
+                </div>
+                <div class="row form_main_all_question_body body_bg third_bg_all">
+                    <div class="row justify-center align-center fit_contain">
+                        <div class="column justify-around align-center col-4">
+                            <img src="img/all3.png" alt="Pictue">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="form_main_all_question_questions row  ">
+                    <li class="form_main_all_question_questions_item">
+                        <input name="third_all_question" type="radio" id="all7">
+                        <label for="all7">Не меньше 20. Порядочность должна быть во всем!</label>
+                    </li>
+                    <li class="form_main_all_question_questions_item">
+                        <input name="third_all_question" type="radio" id="all8">
+                        <label for="all8">Штук 5, не больше. Краткость – сестра таланта.</label>
+                    </li>
+                    <li class="form_main_all_question_questions_item">
+                        <input name="third_all_question" type="radio" id="all9">
+                        <label for="all9">Ни одного – всегда нарушаю правила!</label>
+                    </li>
+                </ul>
+                <div class="row justify-center align-center">
+                    <button type="button" class="button">
+                        Далее
+                    </button>
+                </div>
+            </li>
+            <li class="form_main_all_question  all_fourth hidden step">
+                <div class="row justify-center align-center">
+                    <h1 class="form_main_all_question_h1">Ваше кредо –</h1>
+                </div>
+                <div class="row form_main_all_question_body body_bg fourth_bg_all">
+                    <div class="row justify-center align-center fit_contain">
+                        <div class="column justify-around align-center col-4">
+                            <img src="img/all4.png" alt="Pictue">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="form_main_all_question_questions row  ">
+                    <li class="form_main_all_question_questions_item">
+                        <input name="forth_all_question" type="radio" id="all10">
+                        <label for="all10">Никогда не сдаваться</label>
+                    </li>
+                    <li class="form_main_all_question_questions_item">
+                        <input name="forth_all_question" type="radio" id="all11">
+                        <label for="all11">Радоваться жизни</label>
+                    </li>
+                    <li class="form_main_all_question_questions_item">
+                        <input name="forth_all_question" type="radio" id="all12">
+                        <label for="all12">Помнить о главном</label>
+                    </li>
+                </ul>
+                <div class="row justify-center align-center">
+                    <button type="button" class="button">
+                        Узнать результат
+                    </button>
+                </div>
+            </li>
+
+            <li class=" form_main_last_step_m last_step_m_1  hidden step">
+                <div class="row">
+                    <h1 class="form_main_last_step_m_h1">Результаты</h1>
+                </div>
+                <div class="row form_main_last_step_m_body body_bg last_step_m_bg">
+                    <div class="row xs-justify-around fit_contain">
+                        <div class="col-2 offset-2 col-xs-5 offset-xs-0">
+                            <img class="form_main_last_step_m_body_img" src="img/last_boy.png" alt="Pictue">
+                        </div>
+                        <div class="col-5 offset-1 col-xs-7 offset-xs-0">
+                            <p class="form_main_last_step_m_body_p">В жизни есть место не только празднику. Вы хорошо
+                                это
+                                знаете и готовы смело и спокойно принимать как прелести жизни, так и любые ее прихоти и
+                                сюрпризы.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="form_main_last_step_m_under_p">Призы сами себя не выиграют! <br> Заполните короткую
+                        форму,
+                        чтобы участвовать в розыгрыше</p>
+                </div>
+                <div class="form_phone">
+                    <form action="">
+                        <div class="form_phone_body">
+                            <div class="row ">
+                                <div class="col-6 col-xs-12">
+                                    <label class="form_phone_label" for="phone_m"> Телефон</label>
+                                    <input id="phone_m" class="form_phone_input form-control" type="tel"
+                                           placeholder="+7 (000) 000-0000" data-mask="+7 (000) 000-0000">
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-6 col-xs-12">
+                                    <input id="check" class="form_phone_checkbox" type="checkbox"> <label
+                                        class="form_phone_checkbox_descr" for="check">Я согласен с условиями обработки
+                                    и передачи персональных данных</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_phone_under">
+                            <p class="form_phone_under_p">* Отправляя поля формы, Вы предоставляете право и даете свое
+                                согласие на
+                                обработку, хранение, использование, удаление (с использованием средств автоматизации или
+                                без
+                                использования таких средств) предоставленных Вами персональных данных (номера телефона)
+                                в адрес ПАО
+                                Сбербанк (ОГРН 1027700132195, адрес: 117997, г. Москва, ул. Вавилова, д. 19) , а также
+                                Организатора
+                                Акции ООО «ТМА Маркетинг Сервисез» (ОГРН 1077746003829, адрес: 115114 г. Москва, ул.
+                                Летниковская,
+                                д.11/10, стр. 2) в целях информирования Вас о дальнейших этапа Акции и вручения призов.
+                                По
+                                достижению целей обработки персональные данные будут удалены.</p>
+                            <button class="form_phone_under_submit button" type="button">Начать</button>
+                        </div>
+                    </form>
+                </div>
+            </li>
+            <li class=" form_main_last_step_m last_step_m_2  hidden step">
+                <div class="row">
+                    <h1 class="form_main_last_step_m_h1">Результаты</h1>
+                </div>
+                <div class="row form_main_last_step_m_body body_bg last_step_m_bg">
+                    <div class="row xs-justify-around fit_contain">
+                        <div class="col-2 offset-2 col-xs-5 offset-xs-0">
+                            <img class="form_main_last_step_m_body_img" src="img/last_boy.png" alt="Pictue">
+                        </div>
+                        <div class="col-5 offset-1 col-xs-7 offset-xs-0">
+                            <p class="form_main_last_step_m_body_p">Вы не лишены максимализма и безрассудства, и это
+                                часто играет вам на руку – легкое отношение к жизни ценят не только друзья, но и
+                                женщины.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="form_main_last_step_m_under_p">Призы сами себя не выиграют! <br> Заполните короткую
+                        форму,
+                        чтобы участвовать в розыгрыше</p>
+                </div>
+                <div class="form_phone">
+                    <form action="">
+                        <div class="form_phone_body">
+                            <div class="row ">
+                                <div class="col-6 col-xs-12">
+                                    <label class="form_phone_label" for="phone_m1"> Телефон</label>
+                                    <input class="form_phone_input form-control" id="phone_m1" type="tel"
+                                           placeholder="+7 (000) 000-0000" data-mask="+7 (000) 000-0000">
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-6 col-xs-12">
+                                    <input id="check1" class="form_phone_checkbox" type="checkbox"> <label
+                                        class="form_phone_checkbox_descr" for="check1">Я согласен с условиями обработки
+                                    и передачи персональных данных</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_phone_under">
+                            <p class="form_phone_under_p">* Отправляя поля формы, Вы предоставляете право и даете свое
+                                согласие на
+                                обработку, хранение, использование, удаление (с использованием средств автоматизации или
+                                без
+                                использования таких средств) предоставленных Вами персональных данных (номера телефона)
+                                в адрес ПАО
+                                Сбербанк (ОГРН 1027700132195, адрес: 117997, г. Москва, ул. Вавилова, д. 19) , а также
+                                Организатора
+                                Акции ООО «ТМА Маркетинг Сервисез» (ОГРН 1077746003829, адрес: 115114 г. Москва, ул.
+                                Летниковская,
+                                д.11/10, стр. 2) в целях информирования Вас о дальнейших этапа Акции и вручения призов.
+                                По
+                                достижению целей обработки персональные данные будут удалены.</p>
+                            <button class="form_phone_under_submit button" type="button">Начать</button>
+                        </div>
+                    </form>
+                </div>
+            </li>
+            <li class=" form_main_last_step_m last_step_m_3  hidden step">
+                <div class="row">
+                    <h1 class="form_main_last_step_m_h1">Результаты</h1>
+                </div>
+                <div class="row form_main_last_step_m_body body_bg last_step_m_bg">
+                    <div class="row xs-justify-around fit_contain">
+                        <div class="col-2 offset-2 col-xs-5 offset-xs-0">
+                            <img class="form_main_last_step_m_body_img" src="img/last_boy.png" alt="Pictue">
+                        </div>
+                        <div class="col-5 offset-1 col-xs-7 offset-xs-0">
+                            <p class="form_main_last_step_m_body_p">Постоянство – ваше кредо. Друзья всегда могут на вас
+                                положиться, а женщины про таких, как вы, говорят «хоть на край света». И они совершенно
+                                правы.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="form_main_last_step_m_under_p">Призы сами себя не выиграют! <br> Заполните короткую
+                        форму,
+                        чтобы участвовать в розыгрыше</p>
+                </div>
+                <div class="form_phone">
+                    <form action="">
+                        <div class="form_phone_body">
+                            <div class="row ">
+                                <div class="col-6 col-xs-12">
+                                    <label class="form_phone_label" for="phone_m2"> Телефон</label>
+                                    <input class="form_phone_input form-control" id="phone_m2" type="tel"
+                                           placeholder="+7 (000) 000-0000" data-mask="+7 (000) 000-0000">
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-6 col-xs-12">
+                                    <input id="check2" class="form_phone_checkbox" type="checkbox"> <label
+                                        class="form_phone_checkbox_descr" for="check2">Я согласен с условиями обработки
+                                    и передачи персональных данных</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_phone_under">
+                            <p class="form_phone_under_p">* Отправляя поля формы, Вы предоставляете право и даете свое
+                                согласие на
+                                обработку, хранение, использование, удаление (с использованием средств автоматизации или
+                                без
+                                использования таких средств) предоставленных Вами персональных данных (номера телефона)
+                                в адрес ПАО
+                                Сбербанк (ОГРН 1027700132195, адрес: 117997, г. Москва, ул. Вавилова, д. 19) , а также
+                                Организатора
+                                Акции ООО «ТМА Маркетинг Сервисез» (ОГРН 1077746003829, адрес: 115114 г. Москва, ул.
+                                Летниковская,
+                                д.11/10, стр. 2) в целях информирования Вас о дальнейших этапа Акции и вручения призов.
+                                По
+                                достижению целей обработки персональные данные будут удалены.</p>
+                            <button class="form_phone_under_submit button" type="button">Начать</button>
+                        </div>
+                    </form>
+                </div>
+            </li>
+            <li class=" form_main_last_step_w last_step_w_1  hidden step">
+                <div class="row">
+                    <h1 class="form_main_last_step_w_h1">Результаты</h1>
+                </div>
+                <div class="row form_main_last_step_w_body body_bg last_step_w_bg">
+                    <div class="row xs-justify-around fit_contain">
+                        <div class=" col-1 offset-3 col-xs-5 offset-xs-0">
+                            <img class="form_main_last_step_w_body_img" src="img/last_girl.png" alt="Pictue">
+                        </div>
+                        <div class=" col-5 offset-1 col-xs-7 offset-xs-0">
+                            <p class="form_main_last_step_w_body_p">Зачем изобретать велосипед, когда он давно
+                                придуман?
+                                Есть много проверенных способов добиться своей цели. Классическое сочетание красоты и
+                                уверенности в себе всегда актуально.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="form_main_last_step_w_under_p">Призы сами себя не выиграют! <br> Заполните короткую
+                        форму,
+                        чтобы участвовать в розыгрыше</p>
+                </div>
+                <div class="form_phone">
+                    <form action="">
+                        <div class="form_phone_body">
+                            <div class="row ">
+                                <div class="col-6 col-xs-12">
+                                    <label class="form_phone_label" for="phone_w"> Телефон</label>
+                                    <input class="form_phone_input form-control" id="phone_w" type="tel"
+                                           placeholder="+7 (000) 000-0000" data-mask="+7 (000) 000-0000">
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-6 col-xs-12">
+                                    <input id="check3" class="form_phone_checkbox .checkbox" type="checkbox"> <label
+                                        class="form_phone_checkbox_descr" for="check3">
+                                    Я согласен с условиями обработки и передачи
+                                    персональных
+                                    данных</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_phone_under">
+                            <p class="form_phone_under_p">* Отправляя поля формы, Вы предоставляете право и даете свое
+                                согласие на
+                                обработку, хранение, использование, удаление (с использованием средств автоматизации или
+                                без
+                                использования таких средств) предоставленных Вами персональных данных (номера телефона)
+                                в адрес ПАО
+                                Сбербанк (ОГРН 1027700132195, адрес: 117997, г. Москва, ул. Вавилова, д. 19) , а также
+                                Организатора
+                                Акции ООО «ТМА Маркетинг Сервисез» (ОГРН 1077746003829, адрес: 115114 г. Москва, ул.
+                                Летниковская,
+                                д.11/10, стр. 2) в целях информирования Вас о дальнейших этапа Акции и вручения призов.
+                                По
+                                достижению целей обработки персональные данные будут удалены.</p>
+                            <button class="form_phone_under_submit button" type="button">Начать</button>
+                        </div>
+                    </form>
+                </div>
+            </li>
+            <li class=" form_main_last_step_w last_step_w_2  hidden step">
+                <div class="row">
+                    <h1 class="form_main_last_step_w_h1">Результаты</h1>
+                </div>
+                <div class="row form_main_last_step_w_body body_bg last_step_w_bg">
+                    <div class="row xs-justify-around fit_contain">
+                        <div class=" col-1 offset-3 col-xs-5 offset-xs-0">
+                            <img class="form_main_last_step_w_body_img" src="img/last_girl.png" alt="Pictue">
+                        </div>
+                        <div class=" col-5 offset-1 col-xs-7 offset-xs-0">
+                            <p class="form_main_last_step_w_body_p">Сила женщины – в ее слабости, вы как никто хорошо
+                                это знаете и умело используете, чтобы добиться своего. Уверены, перед вашими чарами
+                                никому не устоять.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="form_main_last_step_w_under_p">Призы сами себя не выиграют! <br> Заполните короткую
+                        форму,
+                        чтобы участвовать в розыгрыше</p>
+                </div>
+                <div class="form_phone">
+                    <form action="">
+                        <div class="form_phone_body">
+                            <div class="row ">
+                                <div class="col-6 col-xs-12">
+                                    <label class="form_phone_label" for="phone_w2"> Телефон</label>
+                                    <input class="form_phone_input form-control" id="phone_w2" type="tel"
+                                           placeholder="+7 (000) 000-0000" data-mask="+7 (000) 000-0000">
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-6 col-xs-12">
+                                    <input id="check4" class="form_phone_checkbox .checkbox" type="checkbox"> <label
+                                        class="form_phone_checkbox_descr" for="check4">Я согласен с условиями обработки
+                                    и передачи
+                                    персональных
+                                    данных</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_phone_under">
+                            <p class="form_phone_under_p">* Отправляя поля формы, Вы предоставляете право и даете свое
+                                согласие на
+                                обработку, хранение, использование, удаление (с использованием средств автоматизации или
+                                без
+                                использования таких средств) предоставленных Вами персональных данных (номера телефона)
+                                в адрес ПАО
+                                Сбербанк (ОГРН 1027700132195, адрес: 117997, г. Москва, ул. Вавилова, д. 19) , а также
+                                Организатора
+                                Акции ООО «ТМА Маркетинг Сервисез» (ОГРН 1077746003829, адрес: 115114 г. Москва, ул.
+                                Летниковская,
+                                д.11/10, стр. 2) в целях информирования Вас о дальнейших этапа Акции и вручения призов.
+                                По
+                                достижению целей обработки персональные данные будут удалены.</p>
+                            <button class="form_phone_under_submit button" type="button">Начать</button>
+                        </div>
+                    </form>
+                </div>
+            </li>
+            <li class=" form_main_last_step_w last_step_w_3  hidden step">
+                <div class="row ">
+                    <h1 class="form_main_last_step_w_h1">Результаты</h1>
+                </div>
+                <div class="row form_main_last_step_w_body body_bg last_step_w_bg">
+                    <div class="row xs-justify-around fit_contain">
+                        <div class=" col-1 offset-3 col-xs-5 offset-xs-0">
+                            <img class="form_main_last_step_w_body_img" src="img/last_girl.png" alt="Pictue">
+                        </div>
+                        <div class=" col-5 offset-1 col-xs-7 offset-xs-0">
+                            <p class="form_main_last_step_w_body_p">Ваши козыри для тех, кто понимает в жизни толк. Вы
+                                не гонитесь за успехом и популярностью, однако никогда не упустите своего. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="form_main_last_step_w_under_p">Призы сами себя не выиграют! <br> Заполните короткую
+                        форму,
+                        чтобы участвовать в розыгрыше</p>
+                </div>
+                <div class="form_phone">
+                    <form action="">
+                        <div class="form_phone_body">
+                            <div class="row ">
+                                <div class="col-6 col-xs-12">
+                                    <label class="form_phone_label" for="phone_w3"> Телефон</label>
+                                    <input class="form_phone_input form-control" id="phone_w3" type="tel"
+                                           placeholder="+7 (000) 000-0000" data-mask="+7 (000) 000-0000">
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-6 col-xs-12">
+                                    <input id="check5" class="form_phone_checkbox .checkbox" type="checkbox"> <label
+                                        class="form_phone_checkbox_descr" for="check5">
+                                    Я согласен с условиями обработки и передачи
+                                    персональных
+                                    данных</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_phone_under">
+                            <p class="form_phone_under_p">* Отправляя поля формы, Вы предоставляете право и даете свое
+                                согласие на
+                                обработку, хранение, использование, удаление (с использованием средств автоматизации или
+                                без
+                                использования таких средств) предоставленных Вами персональных данных (номера телефона)
+                                в адрес ПАО
+                                Сбербанк (ОГРН 1027700132195, адрес: 117997, г. Москва, ул. Вавилова, д. 19) , а также
+                                Организатора
+                                Акции ООО «ТМА Маркетинг Сервисез» (ОГРН 1077746003829, адрес: 115114 г. Москва, ул.
+                                Летниковская,
+                                д.11/10, стр. 2) в целях информирования Вас о дальнейших этапа Акции и вручения призов.
+                                По
+                                достижению целей обработки персональные данные будут удалены.</p>
+                            <button class="form_phone_under_submit" type="button">Начать</button>
+                        </div>
+                    </form>
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/script_min.js"></script>
+<script>
+
+</script>
+</body>
+</html>
